@@ -32,5 +32,5 @@ def time_view(request):
 def workdir_view(request):
     files = []
     path = Path.cwd()
-    files += os.listdir(path)
-    return HttpResponse(path)
+    files.append(os.listdir(path))
+    return HttpResponse(files)
